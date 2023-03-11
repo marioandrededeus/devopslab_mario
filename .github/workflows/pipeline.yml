@@ -28,12 +28,7 @@ jobs:
         run: |
           coverage run --source=app -m pytest test.py
           coverage report -m
-          coverage xml -i
-
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master  #https://github.com/marketplace/actions/sonarcloud-scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
+          coverage xml -i 
 
       - name: Docker Login
         run: | 
